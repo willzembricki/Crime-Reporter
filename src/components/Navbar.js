@@ -1,17 +1,24 @@
 import { useState } from "react";
 import Select from "react-select";
-
-function NavBar({ handleGraphSubmit }) {
+// import styled from "styled-components";
+function NavBar({ handleGraphSubmit, clearGraph }) {
   const [stateSelected, setStateSelected] = useState([]);
   const [crimeSelected, setCrimeSelected] = useState([]);
 
   const statesAvailable = [
     { value: "1", label: "Oregon" },
     { value: "2", label: "Arkansas" },
+    { value: "5", label: "Colorado" },
   ];
   const crimesAvailable = [
     { value: "1", label: "Drug Possesion - (Marijuana)" },
     { value: "2", label: "Drug Possession - (Opium)" },
+    { value: "3", label: "Drug Possession - (Synthetic)" },
+    { value: "4", label: "Drug Possession - (Other)" },
+    { value: "5", label: "Drug Sales - (Marijuana)" },
+    { value: "6", label: "Drug Sales - (Opium)" },
+    { value: "7", label: "Drug Sales - (Synthetic)" },
+    { value: "8", label: "Drug Sales - (Other)" },
   ];
   function handleStateSelections(e) {
     setStateSelected(e.map((val) => val.value));
@@ -42,23 +49,45 @@ function NavBar({ handleGraphSubmit }) {
     setStateSelected([]);
     setCrimeSelected([]);
   }
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: "1px dotted pink",
+      color: state.isSelected ? "red" : "blue",
+      padding: 10,
+      "font-size": "12px",
+    }),
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      width: "auto",
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = "opacity 300ms";
+
+      return { ...provided, opacity, transition };
+    },
+  };
   return (
     <div id="form">
       <form onSubmit={handleSubmit}>
         <Select
-          style={{ color: "red" }}
+          className="select"
+          styles={customStyles}
           isMulti
           options={statesAvailable}
           onChange={handleStateSelections}
         />
         <Select
-          style={{ color: "red" }}
+          className="select"
+          styles={customStyles}
           isMulti
           options={crimesAvailable}
           onChange={handleCrimeSelections}
         />
         <input type="submit" value="Get The Graph" />
       </form>
+      <button onClick={clearGraph}>Clear Graph</button>
     </div>
   );
 }

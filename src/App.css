@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+.select {
+  display: inline-block;
+  width: 50%;
+}
+.chart {
+  width: "650";
+  justify-content: center;
+}
+.modal {
+  position: fixed;
+
+  z-index: 10;
+  top: 2%;
+  width: 50%;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.829);
+}
+.modal_content {
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 40%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.close {
+  color: white;
+  float: right;
+}
+
+.close:hover {
+  color: cyan;
+  cursor: pointer;
+}
+
+.map {
+  z-index: -1;
+  justify-content: center;
+  position: absolute;
+}

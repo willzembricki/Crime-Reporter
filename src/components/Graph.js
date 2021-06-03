@@ -6,6 +6,7 @@ const LineChart = ({ charData, labelArr }) => {
   //     const value = yearIns.total;
   //    return year, value;
   //   });
+  var randomColor = require("randomcolor");
 
   const dataStructure = charData;
   // console.log(dataStructure);
@@ -15,8 +16,8 @@ const LineChart = ({ charData, labelArr }) => {
       data: dataset,
       label: JSON.stringify(labelArr[i]),
       fill: false,
-      backgroundColor: "rgba(255,99,132,0.2)",
-      borderColor: "rgba(255,99,132,1)",
+      backgroundColor: randomColor(),
+      borderColor: randomColor(),
       borderWidth: 1,
       hoverBackgroundColor: "rgba(255,99,132,0.4)",
       hoverBorderColor: "rgba(255,99,132,1)",
@@ -34,6 +35,13 @@ const LineChart = ({ charData, labelArr }) => {
         {
           ticks: {
             beginAtZero: true,
+          },
+        },
+      ],
+      xAxes: [
+        {
+          ticks: {
+            beginAt: "1995",
           },
         },
       ],

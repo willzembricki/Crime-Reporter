@@ -1,6 +1,6 @@
 import { Line } from "react-chartjs-2";
 import { useState } from "react";
-const LineChart = ({ charData, legend }) => {
+const LineChart = ({ charData, labelArr }) => {
   //   const dataStructure = charData.map((yearIns) => {
   //     const year = yearIns.year;
   //     const value = yearIns.total;
@@ -8,12 +8,12 @@ const LineChart = ({ charData, legend }) => {
   //   });
 
   const dataStructure = charData;
-  console.log(dataStructure);
-
-  const datasetsArr = dataStructure.map((dataset) => {
+  // console.log(dataStructure);
+  console.log(labelArr);
+  const datasetsArr = dataStructure.map((dataset, i) => {
     return {
       data: dataset,
-      label: "Dataset " + (dataStructure.length + 1),
+      label: JSON.stringify(labelArr[i]),
       fill: false,
       backgroundColor: "rgba(255,99,132,0.2)",
       borderColor: "rgba(255,99,132,1)",

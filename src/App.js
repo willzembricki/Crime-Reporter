@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 function App() {
   const [dpmArrests, setDPMArrests] = useState([]);
   const [graphData, setGraphData] = useState([]);
-
+  const [labelArr, setLabelArr] = useState([]);
   // useEffect(() => {
   //   fetch("http://localhost:3000/arrests/1")
   //     .then((res) => res.json())
@@ -15,8 +15,9 @@ function App() {
   // }, []);
 
   function onFormSubmit(yearvsCrime) {
-    setDPMArrests(yearvsCrime);
-    setGraphData([...graphData, yearvsCrime]);
+    setDPMArrests(yearvsCrime[0]);
+    setGraphData([...graphData, yearvsCrime[0]]);
+    setLabelArr([...labelArr, yearvsCrime[1]]);
   }
   return (
     <div className="App">
@@ -24,7 +25,11 @@ function App() {
         <div>
           <Map nameSS={"hello"} />
           <Navbar handleGraphSubmit={onFormSubmit} />
-          <LineChart charData={graphData} legend="Crime Data" />
+          <LineChart
+            charData={graphData}
+            legend="Crime Data"
+            labelArr={labelArr}
+          />
         </div>
       </header>
     </div>

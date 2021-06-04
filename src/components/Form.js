@@ -7,7 +7,9 @@ function Form() {
   const [fArrests, setFArrests] = useState();
   const [year, setYear] = useState();
 
-  function handleSubmit() {}
+  function handleSubmit() {
+    fetch();
+  }
   return (
     <div>
       <form onSubmit={() => handleSubmit}>

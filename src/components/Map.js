@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import USAMap from "react-usa-map";
-
+var randomColor = require("randomcolor");
 class Map extends Component {
   /* mandatory */
   mapHandler = (event) => {
@@ -9,21 +9,35 @@ class Map extends Component {
   statesCustomConfig = () => {
     return {
       OR: {
-        fill: "navy",
+        fill: randomColor(),
         clickHandler: (event) => {
           this.props.stateClicker(1);
           this.props.toggle();
         },
       },
       AR: {
-        fill: "navy",
+        fill: randomColor(),
         clickHandler: (event) => {
           this.props.stateClicker(2);
           this.props.toggle();
         },
       },
+      IA: {
+        fill: randomColor(),
+        clickHandler: (event) => {
+          this.props.stateClicker(3);
+          this.props.toggle();
+        },
+      },
+      KS: {
+        fill: randomColor(),
+        clickHandler: (event) => {
+          this.props.stateClicker(4);
+          this.props.toggle();
+        },
+      },
       CO: {
-        fill: "navy",
+        fill: randomColor(),
         clickHandler: (event) => {
           this.props.stateClicker(5);
           this.props.toggle();

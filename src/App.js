@@ -41,7 +41,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <Form />
+          {/* <Form /> */}
           <Map
             className="map"
             nameSS={"hello"}

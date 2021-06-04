@@ -8,6 +8,8 @@ function NavBar({ handleGraphSubmit, clearGraph }) {
   const statesAvailable = [
     { value: "1", label: "Oregon" },
     { value: "2", label: "Arkansas" },
+    { value: "3", label: "Iowa" },
+    { value: "4", label: "Kansas" },
     { value: "5", label: "Colorado" },
   ];
   const crimesAvailable = [

@@ -5,6 +5,7 @@ import LineChart from "./components/Graph";
 import Map from "./components/Map";
 import Navbar from "./components/Navbar";
 import Statecard from "./components/Statecard";
+import Form from "./components/Form";
 
 function App() {
   const [dpmArrests, setDPMArrests] = useState([]);
@@ -40,6 +41,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
+          <Form />
           <Map
             className="map"
             nameSS={"hello"}

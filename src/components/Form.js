@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Form() {
-  const [stateID, setStateID] = useState("1");
-  const [crimeID, setCrimeID] = useState("1");
   const [mArrests, setMArrests] = useState();
   const [fArrests, setFArrests] = useState();
   const [year, setYear] = useState();

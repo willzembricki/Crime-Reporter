@@ -43,6 +43,20 @@ class Map extends Component {
           this.props.toggle();
         },
       },
+      NJ: {
+        fill: randomColor(),
+        clickHandler: (event) => {
+          this.props.stateClicker(6);
+          this.props.toggle();
+        },
+      },
+      NY: {
+        fill: randomColor(),
+        clickHandler: (event) => {
+          this.props.stateClicker(7);
+          this.props.toggle();
+        },
+      },
     };
   };
   render() {

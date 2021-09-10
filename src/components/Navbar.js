@@ -11,6 +11,8 @@ function NavBar({ handleGraphSubmit, clearGraph }) {
     { value: "3", label: "Iowa" },
     { value: "4", label: "Kansas" },
     { value: "5", label: "Colorado" },
+    { value: "6", label: "New Jersey" },
+    { value: "7", label: "New York" },
   ];
   const crimesAvailable = [
     { value: "1", label: "Drug Possesion - (Marijuana)" },
@@ -31,23 +33,12 @@ function NavBar({ handleGraphSubmit, clearGraph }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch(`http://localhost:3000/crimes/data/${stateSelected}/${crimeSelected}`)
+    fetch(
+      `http://https://blooming-stream-80547.herokuapp.com/crimes/data/${stateSelected}/${crimeSelected}`
+    )
       .then((res) => res.json())
       .then((res) => handleGraphSubmit(res));
-    // fetch("http://localhost:9393/rounds", {
-    //   method: "POST",
-    //   headers: { "content-type": "application/json" },
-    //   body: JSON.stringify({
-    //     price: roundPrice,
-    //     person_id: person.id,
-    //     people_drinking: peopleDrinking,
-    //   }),
-    // }).then((res) => res.json())
-    // .then(data => {
-    //     onForceReload(data)}
-    //     );
-    // setRoundPrice("");
-    // setPeopleDrinking([]);
+
     setStateSelected([]);
     setCrimeSelected([]);
   }

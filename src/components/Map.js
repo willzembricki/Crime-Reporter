@@ -69,6 +69,11 @@ class Map extends Component {
           height="420"
           onClick={this.mapHandler}
         />
+        <p>
+          Highlighted states have data availble for population as well as crime
+          graphs. Please select a state and crime that you would like to plot.
+          Manually clear selections after selecting get the graph.
+        </p>
       </div>
     );
   }

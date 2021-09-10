@@ -62,6 +62,7 @@ class Map extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Crime Reporter</h1>
         <USAMap
           customize={this.statesCustomConfig()}
           width="650"

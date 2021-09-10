@@ -20,7 +20,7 @@ function App() {
     setGraphData([]);
   }
   function stateClicker(e) {
-    fetch(`https://https://blooming-stream-80547.herokuapp.com/states/${e}`)
+    fetch(`https://blooming-stream-80547.herokuapp.com/states/${e}`)
       .then((res) => res.json())
       .then((stateData) => setDisplayState(stateData));
   }

@@ -34,7 +34,7 @@ function NavBar({ handleGraphSubmit, clearGraph }) {
     e.preventDefault();
 
     fetch(
-      `http://https://blooming-stream-80547.herokuapp.com/crimes/data/${stateSelected}/${crimeSelected}`
+      `https://blooming-stream-80547.herokuapp.com/crimes/data/${stateSelected}/${crimeSelected}`
     )
       .then((res) => res.json())
       .then((res) => handleGraphSubmit(res));

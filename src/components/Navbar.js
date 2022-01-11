@@ -59,7 +59,7 @@ function NavBar({ handleGraphSubmit, clearGraph }) {
   // const statesAvailable = states.map((abbv, i) => {
   //   return { value: `${i + 1}`, label: `${abbv}` };
   // });
-  console.log(statesAvailable);
+
   const statesAvailable = [
     { value: "1", label: "Oregon" },
     { value: "2", label: "Arkansas" },
